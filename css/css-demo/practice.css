@@ -1,6 +1,9 @@
 #contact-info {
 font-size: .8em;
 }
+#contact-info:first-child {
+background-color: black;
+}
 .job {
 background-color: .#e9e5dc;
 border-radius: 10px;
@@ -9,4 +12,7 @@ margin-bottom: 10px;
 }
 .ul {
 font-size: .8em;
+}
+ul>li {
+text-decoration: underline;
 }
