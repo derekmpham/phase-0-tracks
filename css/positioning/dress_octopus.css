@@ -1,0 +1,22 @@
+.dressed-octopus {
+	display: block;
+	position: relative;
+	margin: 0 auto;
+}
+
+#octopus {
+	position: relative;
+	top: 110px;
+}
+
+#hat {
+	position: relative;
+	bottom: 245px;
+	left: 15px;
+}
+
+#glasses {
+	position: relative;
+	bottom: 245px;
+	left: 5px;
+}
