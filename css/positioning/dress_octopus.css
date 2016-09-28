@@ -9,3 +9,14 @@
 	top: 110px;
 }
 
+#hat {
+	position: relative;
+	bottom: 245px;
+	left: 15px;
+}
+
+#glasses {
+	position: relative;
+	bottom: 245px;
+	left: 5px;
+}
