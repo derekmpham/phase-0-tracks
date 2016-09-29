@@ -1,5 +1,5 @@
 body {
-  width: 960px;
+  max-width: 960px;
   display: table;
 }
 
@@ -15,16 +15,18 @@ cite {
 }
 
 main {
-  width: 756px;
+  width: 20%;
   display: table-cell;
   vertical-align: middle;
+  min-width: 10%;
 }
 
 #external-links {
-  width: 200px;
+  width: 20%;
   display: table-cell;
-  vertical-align: top;
+  vertical-align: top;min-width: 10%;
 }
+
 
 #external-links ul {
   list-style-type: none;
