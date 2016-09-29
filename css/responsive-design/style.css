@@ -24,7 +24,8 @@ main {
 #external-links {
   width: 20%;
   display: table-cell;
-  vertical-align: top;min-width: 10%;
+  vertical-align: top;
+  min-width: 10%;
 }
 
 
