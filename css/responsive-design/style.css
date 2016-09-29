@@ -1,6 +1,6 @@
 body {
   max-width: 960px;
-  display: table;
+  min-width: 320px;
 }
 
 blockquote {
@@ -15,19 +15,16 @@ cite {
 }
 
 main {
-  width: 20%;
-  display: table-cell;
-  vertical-align: middle;
-  min-width: 10%;
+  display: inline-block;
+  vertical-align: top;
+  width: 79%;
 }
 
 #external-links {
-  width: 20%;
-  display: table-cell;
+  display: inline-block;
   vertical-align: top;
-  min-width: 10%;
+  width: 20%;
 }
-
 
 #external-links ul {
   list-style-type: none;
@@ -49,4 +46,16 @@ figure {
 figcaption {
   font-style: italic;
   text-align: right;
+}
+
+@media screen and (max-width: 500px) {
+  #external-links {
+    display: block;
+  }
+  main {
+    display: block;
+  }
+  h1 {
+    font-size: 90%;
+  }
 }
