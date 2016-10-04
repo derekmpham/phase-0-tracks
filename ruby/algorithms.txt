@@ -1,0 +1,31 @@
+RELEASE 0: ELEVATOR ALGORITHM
+
+-If you want to travel to higher floor
+	-Press "Up" arrow
+-Otherwise (to travel to lower floor)
+	-Press "Down" arrow
+-Wait until elevator arrives and elevator door opens
+-Walk into elevator
+-Press button signifying desired destination floor (selection of destination floor buttons adjacent to doors inside elevators)
+-Wait for elevator to ascend/descend to destination floor
+-Walk outside to arrive at destination floor when elevator doors open
+
+
+RELEASE 1: MAKE THE BED
+
+-If you want to prepare for bedtime
+	-Pick up pillows on bed
+	-Place pillows on opposite end of bed
+	-Grab corner of blanket (on end of bed with no pillows)
+	-Pull blanket until half of bed uncovered
+	-Pick up pillows on other end of bed
+	-Place pillows on end of bed not covered in blanket
+-Otherwise (to organize bed)
+	-Pick up pillows on bed
+	-Place pillows on opposite end of bed
+	-Grab folded corner of blanket
+	-Drag corner of blanket over uncovered adjacent bed corner
+		-If there remains another uncovered bed corner
+			-Drag corresponding folded blanket corner over remaining uncovered bed corner
+	-Pick up pillows on other end of bed
+	-Place pillows on newly covered end of bed
