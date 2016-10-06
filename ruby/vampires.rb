@@ -32,5 +32,17 @@ else
 	p "Results inconclusive"
 end
 
+p "Please name any allergies. Put 'done' when finished."
+while true
+allergies=gets.chomp.downcase
+	if allergies=="sunshine"
+		p "Probably a vampire"
+		break
+	end
+	if allergies=="done"
+		break
+	end
+end
+
 employees-=1
 end
