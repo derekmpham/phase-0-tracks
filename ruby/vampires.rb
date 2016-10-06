@@ -1,3 +1,8 @@
+p "How many employees will be processed?"
+employees=gets.chomp.to_i
+
+while employees>0
+
 p "What is your name?"
 name=gets.chomp.downcase
 
@@ -25,4 +30,7 @@ elsif age==age_calc && (garlic=="y" || health=="y")
 	p "Probably not a vampire"
 else
 	p "Results inconclusive"
+end
+
+employees-=1
 end
