@@ -13,7 +13,7 @@ roster = {
 			"Louis Williams",
 			"Nick Young"
 		]
-	}
+	},
 	forwards: {
 		young: [
 			"Zach Auguste",
@@ -29,7 +29,7 @@ roster = {
 			"Thomas Robinson",
 			"Metta World Peace"
 		]
-	}
+	},
 	centers: {
 		young: [
 			"Tarik Black",
@@ -40,3 +40,15 @@ roster = {
 		]
 	}
 }
+
+
+# ACCESS NESTED ITEMS
+
+# access young laker guards
+p roster[:guards][:young]
+
+# access Brandon Ingram
+p roster[:forwards][:young][2]
+
+# reverse veteran forwards list
+p roster[:forwards][:veterans].reverse
