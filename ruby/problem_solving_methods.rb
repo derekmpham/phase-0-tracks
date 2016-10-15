@@ -37,9 +37,36 @@ def fibonnaci(num_terms)
   end
   array
 end
- 
 
 puts "How many terms would you like in your Fibonnaci sequence?"
 num_terms = gets.chomp.to_i
 
 p fibonnaci(num_terms)
+
+
+# Sort an Array: Bubble Sort
+def bubble_sort(array)
+  # determine the length of the list
+  n = array.length
+  # go through each item on list and determine if item is less than or greater than subsequent item
+  loop do
+    swapped = false
+    
+    (n-1).times do |i|
+      # if item is less than subsequent item, leave as is
+      # if item is greater than subsequent item, switch item with subsequent item
+      if array[i] > array[i+1]
+        array[i], array[i+1] = array[i+1], array[i]
+        swapped = true
+      end
+    
+  end
+    # stop going through each item on list when all items are less than their subsequent counterparts
+    break if not swapped
+  end
+  # print array
+  array
+end
+
+p array = [2,7,3,8,4]
+p bubble_sort(array)
