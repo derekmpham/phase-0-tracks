@@ -9,15 +9,6 @@ real_name = gets.chomp.to_s
 swapped_name = real_name.split(' ').reverse.join(' ').downcase
 
 
-# SPLIT INTO LETTERS AND THEN DETERMINE IF VOWEL OR CONSONANT
-
-# split swapped_name into letters
-letters = swapped_name.split('')
-vowel_letter = letters[]
-p vowel_letter
-
-
-
 # CHANGE VOWELS IN NAME
 
 def next_vowel(vowel_letter)
@@ -57,14 +48,32 @@ def next_consonant(consonant_letter)
   result
 end
 
-# result = "adfksla asdfksj"
-# p result.split(' ').map(&:capitalize).join(' ')
 
+# SPLIT INTO LETTERS, DECIPHER IF VOWEL OR CONSONANT, AND INCORPORATE APPROPRIATE VOWEL/CONSONANT METHOD
 
-#Remainder of Challenge
+# split swapped_name into letters
+letters = swapped_name.split('')
+# set up evaluation of each element (each of the now splitted letters)
+letters.map! do |letter|
+  # determine if vowel and incorporate vowel method
+  if "aeiou".include?(letter)
+    next_vowel(letter)
+  # determine if consonant and incorporate consonant method
+  elsif "bcdfghjklmnpqrstvwxyz".include?(letter)
+    next_consonant(letter)
+  # leave as is if neither vowel nor consonant
+  else
+    letter
+  end
+end
 
-#1. complete next_vowel
-#2. complete next consonant
-#3. iterate through the original word and for each letter determine if it is a vowel or consonant (may have to account for downcase / reverse / etc.
-#4. call the apporpriate next method for the letter and add that to a result
-#5. display reuslt
+# consolidate elements in letters array to create shifted_name
+shifted_name = letters.join('')
+# split shifted_name into individual words to allow us to capitalize first letter of each word again
+wordsplit_shifted_name = shifted_name.split(' ')
+# evaluate each element (word) and capitalize first letter of each word
+recapitalize_wordsplit_shifted_name = wordsplit_shifted_name.map(&:capitalize)
+# consolidate capitalized words into final_secret_name
+final_secret_name = recapitalize_wordsplit_shifted_name.join(' ')
+
+p "Your fake name is #{final_secret_name}"
