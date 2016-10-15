@@ -38,7 +38,27 @@ def next_vowel(vowel_letter)
 end
 
 
+# CHANGE CONSONANTS IN NAME
 
+def next_consonant(consonant_letter)
+  consonants = "bcdfghjklmnpqrstvwxyz"
+  #1. look at consonant and find current_location of consonant_letter
+  current_location = consonants.index(consonant_letter)
+  #2. add 1 to current_location of consonant_letter to get next_location
+  next_location = 1 + current_location
+  #3. go to next_location to get next consonant_letter
+  consonants[next_location]
+  #4. account for edge cases
+  if next_location == consonants.length
+    result = "b"
+  else
+    result = consonants[next_location]
+  end
+  result
+end
+
+# result = "adfksla asdfksj"
+# p result.split(' ').map(&:capitalize).join(' ')
 
 
 #Remainder of Challenge
