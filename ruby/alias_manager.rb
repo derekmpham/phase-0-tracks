@@ -78,7 +78,13 @@ recapitalize_wordsplit_shifted_name = wordsplit_shifted_name.map(&:capitalize)
 # consolidate capitalized words into final_secret_name
 final_secret_name = recapitalize_wordsplit_shifted_name.join(' ')
 
+# store final_secret_name in database array --> can only seem to store last alias name
+alias_database = []
+alias_database.push(final_secret_name)
+
 p "Your fake name is #{final_secret_name}. Enter another first and last name, or put 'quit' to exit."
 real_name = gets.chomp.to_s
 # end "input multiple names" option loop
 end
+
+p alias_database
