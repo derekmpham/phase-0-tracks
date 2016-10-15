@@ -6,7 +6,7 @@ no = gets.chomp.to_i
 
 def search_array (arr, no)
 answer = arr.each_index.select{|x| no == arr[x]}
-  answer
+answer.first
 end
 
 p search_array(arr, no)
@@ -31,7 +31,8 @@ def fibonnaci(num_terms)
     array.push(1)
     while index != (num_terms - 2)
       # next number would be sum of two previous numbers in sequence
-      array.push(array[index] + array[index.next])
+      sum_of_last_two_var = array[index] + array[index.next]
+      array.push(sum_of_last_two_var)
       index += 1
     end
   end
@@ -68,5 +69,6 @@ def bubble_sort(array)
   array
 end
 
+p "Example of the Bubble Sort"
 p array = [2,7,3,8,4]
 p bubble_sort(array)
