@@ -59,19 +59,20 @@ remove_item(g_list, "carrots")
 
 
 # Method 4: update quantity of item
-def quant_update(list, item_name, quantity)
-	list[item_name] = quantity
-	p list
-end
+# def quant_update(list, item_name, quantity)
+# 	list[item_name] = quantity
+# 	p list
+# end
+# quant_update same method as add_item
 
-quant_update(g_list, "apples", 5)
+add_item(g_list, "apples", 5)
 
 
 # Method 5: print everything
-def pretty_hash(list)
+def print_list(list)
 	list.each do |item, quantity|
 		p "#{item}: #{quantity}"
 	end
 end
 
-pretty_hash(g_list)
+print_list(g_list)
