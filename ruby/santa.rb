@@ -1,22 +1,25 @@
 #DEFINE SANTA CLASS
 class Santa
-
 	def speak
-		puts "Ho, ho, ho! Haaaappy holidays!"
+		puts "#Ho, ho, ho! Haaaappy holidays! I am an #{@ethnicity} #{@gender} Santa! I am #{@age} years old."
 	end
 
 	def eat_milk_and_cookies(cookie)
-		puts "That was a good #{cookie}!"
+		puts "#{@reindeer_ranking[0]} says, 'That was a good #{cookie}!'"
 	end
 
-	def initialize
+	def initialize(gender, ethnicity)
 		puts "Initializing Santa instance ..."
+		@gender = gender
+		@ethnicity = ethnicity
+		@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+		@age = 0
 	end
-
 end
 
 
 #DRIVER CODE
-p nicholas = Santa.new
-nicholas.speak
-nicholas.eat_milk_and_cookies("chocolate chip")
+
+p nicole = Santa.new("female", "Italian")
+nicole.speak
+nicole.eat_milk_and_cookies("chocolate chip")
