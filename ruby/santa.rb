@@ -1,7 +1,9 @@
 #SANTA CLASS
 class Santa
-	#make our @reindeer_ranking accessible outside of Santa class without having to set it as a getter method
-	attr_reader :reindeer_ranking
+	#use attr_reader as shortcut to adding getter methods
+	attr_reader :age, :ethnicity, :reindeer_ranking
+	#use attr_accessor as shortcut to adding (simple?) setter methods
+	attr_accessor :gender
 	def speak
 		puts "#Ho, ho, ho! Haaaappy holidays! I am a #{@gender} #{@ethnicity} Santa! I am #{@age} years old."
 	end
@@ -18,7 +20,7 @@ class Santa
 		@age = 0
 	end
 
-	#setter methods
+	#remaining setter methods
 	#add 1 to age
 	def celebrate_birthday
 		@age += 1
@@ -33,20 +35,6 @@ class Santa
 		@reindeer_ranking << shifted_reindeer
 		#print our new ranking
 		@reindeer_ranking
-	end
-
-	#allow @gender to be reassigned
-	def gender=(new_gender)
-		@gender = new_gender
-	end
-
-	#getter methods
-	def age
-		@age
-	end
-
-	def ethnicity
-		@ethnicity
 	end
 
 end
