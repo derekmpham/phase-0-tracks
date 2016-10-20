@@ -1,7 +1,7 @@
-class Todolist
+class TodoList
 
-	def initialize
-		@todo_list = ["do the dishes", "mow the lawn"]
+	def initialize(chores)
+		@todo_list = chores
 	end
 
 	def get_items
@@ -16,12 +16,8 @@ class Todolist
 		@todo_list.delete(item)
 	end
 
+	def get_item(index)
+		@todo_list[index]
+	end
+
 end
-
-
-
-
-#DRIVER CODE
-p list = Todolist.new
-list.delete_item("do the dishes")
-list.get_items
