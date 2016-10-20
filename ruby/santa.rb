@@ -1,15 +1,15 @@
 #SANTA CLASS
 class Santa
 	#use attr_reader as shortcut to adding getter methods
-	attr_reader :age, :ethnicity, :reindeer_ranking
+	attr_reader :ethnicity, :reindeer_ranking
 	#use attr_accessor as shortcut to adding (simple?) setter methods
-	attr_accessor :gender
+	attr_accessor :gender, :age
 	def speak
 		puts "#Ho, ho, ho! Haaaappy holidays! I am a #{@gender} #{@ethnicity} Santa! I am #{@age} years old."
 	end
 
 	def eat_milk_and_cookies(cookie)
-		puts "#{@reindeer_ranking[0]} says, 'That was a good #{cookie}!'"
+		puts "#{@reindeer_ranking[0]} says, 'That was a good #{cookie} cookie!'"
 	end
 
 	def initialize(gender, ethnicity)
@@ -49,6 +49,26 @@ genders.length.times do |i|
 	santas << Santa.new(genders[i], ethnicities[i])
 end
 
+#build many santas
+#add fav_cookie options array
+fav_cookie = ["chocolate chip", "peanut butter", "oatmeal raisins", "sugar"]
+#add reindeer_names options array
+reindeer_names = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+
+#set up creation of 50 random santas
+#initiate iteration
+i = 0
+#our iteration includes driver code for adding 50 random santas
+while i < 50
+	many_santas = Santa.new(genders.sample, ethnicities.sample)
+	many_santas.age = rand(140)
+	many_santas.speak
+	many_santas.eat_milk_and_cookies(fav_cookie.sample)
+	many_santas.get_mad_at = (reindeer_names.sample)
+	puts "Santa is mad at #{many_santas.reindeer_ranking.last}"
+	i += 1
+end
+
 
 
 
@@ -69,7 +89,7 @@ nicole.get_mad_at = "Rudolph"
 #run eat_milk_and_cookies method to show Rudolph is not ranked #1 any more
 nicole.eat_milk_and_cookies("chocolate chip")
 #print last item in reindeer_ranking to show that Rudolph is now last in ranking
-puts "#{nicole.reindeer_ranking.last}"
+puts "Nicole is mad at #{nicole.reindeer_ranking.last}"
 
 #Have each item (a.k.a. individual santas) in santas array "speak"
 santas.each do |i|
