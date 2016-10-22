@@ -1,21 +1,63 @@
 #CREATE A WORDGAME CLASS
 
-#Add getter methods for guesses remaining, current progress, win, and lose via attr_reader
+#Add getter methods for secret word, guesses left, and underscored word via attr_reader
 
 
 #Create initialize method
-#set guess count (make sure it’s an instance variable) to 0
-#set win equal to false
-#set lose equal to false
+#input: string (word) —> get Player 1’s input word
+	#count number of letters in string (.length method)
+#set guesses left = twice the number of letters in string
+#set underscored word variable equal to a function that takes on a method of underscoring every letter of input word
 
 
-#Create method to establish relevant word
-#input: string (word)
-	#split word into letters (i.e. “apple” —> “a”, “p”, “p”, “l”, “e”)
-	#Count number of elements in array (.length method)
-		#Number of elements equates to half the guess limit instance variable (make guess limit equate to twice the number of elements)
-		#Add guesses remaining variable = guess limit - guess count
-		#Add current progress variable = array in which elements of word array replaced with “_”
+#Create method for underscoring every letter of input word
+#input: same string/word
+	#substitute every letter of word with “_”
+
+
+#Create method that takes letter guess from user and checks if secret word contains that letter
+#input: guess letter
+	#if secret word contains letter guess, change corresponding characters in underscored word based on their corresponding locations in secret word
+	#else subtract 1 from guesses left if secret word does not contain letter guess
+
+
+
+
+
+#USER INTERFACE
+
+#initiate game
+	#print “Welcome to the Word-Guessing Game!”
+	#print “Player 1: Type in a word for Player 2 to guess”
+		#get Player 1’s response and convert it to a string (equate it to string/word parameter in initialize method)
+		#add game as new instance to word game class and include word parameter
+________
+
+#set up word to guess
+	#print “Player 1: Type in a word for Player 2 to guess”
+		#get Player 1’s response and convert it to a string (equate it to string parameter in establish secret word method)
+		#print “Alright, Player 2 has #{guesses remaining} tries to guess your word”
+
+
+#have Player 2 guess one letter at a time
+#have Player 2 guessing in loop —> while win is false and lose is false
+	#print “Player 2: Guess a letter that’s in Player 1’s word. Here’s your current progress: #{current progress}”
+		#get Player 2’s response and convert it to a string (equate it to string parameter in check for guessed letter method)
+
+#when Player 2 wins
+#if win is true
+	#print “Congrats! You guessed the correct word: #{current progress}
+	#then break (exit program)
+
+#when Player 2 loses
+#if lose is true
+	#print “Sorry! Guess Player 1 got you this time!”
+	#then break (exit program)
+
+
+
+
+
 
 
 #Create method to check for guessed letters
@@ -41,34 +83,3 @@
 					#lose equals to true
 				#else
 					#lose equals to false (game goes on)
-
-
-
-
-#USER INTERFACE
-
-#initiate game
-	#print “Welcome to the Word-Guessing Game!”
-		#add game as new instance to word game class
-
-
-#set up word to guess
-	#print “Player 1: Type in a word for Player 2 to guess”
-		#get Player 1’s response and convert it to a string (equate it to string parameter in establish relevant word method)
-		#print “Alright, Player 2 has #{guesses remaining} tries to guess your word”
-
-
-#have Player 2 guess one letter at a time
-#have Player 2 guessing in loop —> while win is false and lose is false
-	#print “Player 2: Guess a letter that’s in Player 1’s word. Here’s your current progress: #{current progress}”
-		#get Player 2’s response and convert it to a string (equate it to string parameter in check for guessed letter method)
-
-#when Player 2 wins
-#if win is true
-	#print “Congrats! You guessed the correct word: #{current progress}
-	#then break (exit program)
-
-#when Player 2 loses
-#if lose is true
-	#print “Sorry! Guess Player 1 got you this time!”
-	#then break (exit program)
