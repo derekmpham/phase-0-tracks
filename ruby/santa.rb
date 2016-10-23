@@ -16,7 +16,7 @@ class Santa
 	end
 
 	def speak
-		p "Ho, ho, ho! Haaaappy holidays!"
+		p "Ho, ho, ho! Haaaappy holidays! I'm a #{@ethnicity} #{@gender} santa"
 	end
 
 	def eat_milk_and_cookies (cookie_type)
@@ -29,8 +29,12 @@ end
 
 
 #DRIVER CODE
-nick = Santa.new("male", "Vietnamese")
-nick.speak
-nick.eat_milk_and_cookies("chocolate chip")
-nick.reindeer_ranking
-nick.age
+santas = []
+genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+
+genders.length.times do |i|
+	santas << Santa.new(genders[i], ethnicities[i])
+end
+
+santas[1].speak
