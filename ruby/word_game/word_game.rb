@@ -36,55 +36,53 @@ class WordGame
 			p @underscored_word
 		else
 			@guesses_left -= 1
-			p @guesses_left
 		end
 		#add add input guess letter into array of letters that have already been guessed
 		@guessed_letters << letter
+
 		#win/lose status for Player 2
 		#condition for when Player 2 wins
 		if @underscored_word == @secret_word && @guesses_left > 0
 			@win = true
-			p @win
 		#condition for when Player 2 loses
 		elsif @underscored_word != @secret_word && @guesses_left == 0
 			@lose = true
-			p @lose
 		#condition for when the game goes on
 		else
 			@win = false && @lose = false
-			p @win
-			p @lose
 		end
-	end
 
+	end
 
 end
 
-#win is when @underscored_word == @secret_word
-#lose is when !win and @guesses_left == 0
-
-
-#DRIVER CODE
-game = WordGame.new("hello")
-game.check_letter("l")
-game.check_letter("o")
-game.check_letter("h")
-game.check_letter("e")
 
 
 
 #USER INTERFACE
 
-# #get Player 1's input word and initiate game
-# p "Welcome to the Word-Guessing Game!"
-# p "Player 1: Type in a word for Player 2 to guess"
-# word = gets.chomp.to_s
+#get Player 1's input word and initiate game
+p "Welcome to the Word-Guessing Game!"
+p "Player 1: Type in a word for Player 2 to guess"
+word = gets.chomp.to_s
+game = WordGame.new(word)
 
 
-# #get Player 2's input letter guess
-# until
-# p "Player 2: Guess a letter in Player 1's word. You have #{game.guesses_left} guesses remaining"
-# letter = gets.chomp.to_s
+#get Player 2's input letter guess
+#create loop until Player 2 either wins or loses
+until game.win == true || game.lose == true
+p "Player 2: Guess a letter in Player 1's word. Here's what you have so far: #{game.underscored_word}. And here are the letters you've guessed so far: #{game.guessed_letters}. You have #{game.guesses_left} guesses remaining"
+letter = gets.chomp.to_s
+game.check_letter(letter)
+end
 
+#when Player 2 wins
+if game.win == true
+	p "Congrats Player 2! You've guessed the right word: #{game.secret_word}. Guess you're pretty smart after all!"
+end
 
+#when Player 2 loses
+if game.lose == true
+	p "Sorry, you ran out of guesses. Guess Player 1 got you this time!"
+end
 
