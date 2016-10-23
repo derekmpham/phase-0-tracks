@@ -8,6 +8,9 @@
 	#count number of letters in string (.length method)
 #set guesses left = twice the number of letters in string
 #set underscored word variable equal to a function that takes on a method of underscoring every letter of input word
+#create empty array of already guessed letters—>use to keep track of already guessed letters so that we know when Player 2 inputs a letter that he/she already input before
+#create a win instance variable—>set it to false
+#create a lose instance variable—>set it to false
 
 
 #Create method for underscoring every letter of input word
@@ -17,9 +20,10 @@
 
 #Create method that takes letter guess from user and checks if secret word contains that letter
 #input: guess letter
-	#if secret word contains letter guess, change corresponding characters in underscored word based on their corresponding locations in secret word
+	#if input guess letter is already in the array of past guessed letters, leave as is (don’t reduce guesses left)
+	#if secret word contains input letter guess, change the underscored word characters based on corresponding locations in secret word
 	#else subtract 1 from guesses left if secret word does not contain letter guess
-
+	#set conditions for when Player 2 wins or loses
 
 
 
@@ -31,55 +35,19 @@
 	#print “Player 1: Type in a word for Player 2 to guess”
 		#get Player 1’s response and convert it to a string (equate it to string/word parameter in initialize method)
 		#add game as new instance to word game class and include word parameter
-________
-
-#set up word to guess
-	#print “Player 1: Type in a word for Player 2 to guess”
-		#get Player 1’s response and convert it to a string (equate it to string parameter in establish secret word method)
-		#print “Alright, Player 2 has #{guesses remaining} tries to guess your word”
 
 
-#have Player 2 guess one letter at a time
-#have Player 2 guessing in loop —> while win is false and lose is false
-	#print “Player 2: Guess a letter that’s in Player 1’s word. Here’s your current progress: #{current progress}”
-		#get Player 2’s response and convert it to a string (equate it to string parameter in check for guessed letter method)
+#get Player 2's input letter guess
+#create loop until Player 2 either wins or loses
+	#print "Player 2: Guess a letter in Player 1's word. Here's what you have so far: #{game.underscored_word}. And here are the letters you've guessed so far: #{game.guessed_letters}. You have #{game.guesses_left} guesses remaining"
+		#get Player 2’s response and convert it to a string (equate it to string parameter in check letter method)
+
 
 #when Player 2 wins
 #if win is true
-	#print “Congrats! You guessed the correct word: #{current progress}
-	#then break (exit program)
+	"Congrats Player 2! You've guessed the right word: #{game.secret_word}. Guess you're pretty smart after all!"
+
 
 #when Player 2 loses
 #if lose is true
-	#print “Sorry! Guess Player 1 got you this time!”
-	#then break (exit program)
-
-
-
-
-
-
-
-#Create method to check for guessed letters
-#input: string (letter)
-	#compare input string (letter) to each of the elements in the array
-		#if the input string equates (as in ==) to any of the elements in the array
-			#replaced “_” with matched elements in current progress array
-			#return current progress
-			#save current progress
-			#add 1 to the guess count
-				#if all of the elements in the array have been matched and if the guesses remaining variable is greater than or equal to 0
-					#win equals to true
-				#if not all of the elements in the array have been matched and if the guesses remaining variable is equal to 0
-					#lose equals to true
-				#else
-					#both win and lose still equal to false (game goes on)
-		#if the input string is already labeled as a matched element
-			#return existing current progress
-		#else (if the input string does not match with any of the elements)
-			#return existing current progress
-			#add 1 to the guess count
-				#if not all of the elements in the array have been matched and if the guesses remaining variable is equal to 0
-					#lose equals to true
-				#else
-					#lose equals to false (game goes on)
+	#print "Sorry, you ran out of guesses. Guess Player 1 got you this time!"
