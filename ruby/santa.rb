@@ -1,22 +1,29 @@
 #SANTA CLASS
 class Santa
 	
+	attr_reader :age, :ethnicity, :reindeer_ranking
+	attr_accessor :gender
+
 	def initialize(gender, ethnicity)
 		p "Initializing Santa instance ..."
 		@gender = gender
 		@ethnicity = ethnicity
+		@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+		@age = 0
 	end
 
-	def reindeer_ranking
-		p @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+	def celebrate_birthday
+		@age += 1
 	end
 
-	def age
-		p @age = 0
+	def get_mad_at(reindeer)
+		shifted_reindeer = @reindeer_ranking.delete(reindeer)
+		@reindeer_ranking << shifted_reindeer
+		@reindeer_ranking
 	end
 
 	def speak
-		p "Ho, ho, ho! Haaaappy holidays! I'm a #{@ethnicity} #{@gender} santa"
+		p "Ho, ho, ho! Haaaappy holidays! I'm a #{@age} year-old #{@ethnicity} #{@gender} santa"
 	end
 
 	def eat_milk_and_cookies (cookie_type)
@@ -37,4 +44,11 @@ genders.length.times do |i|
 	santas << Santa.new(genders[i], ethnicities[i])
 end
 
-santas[1].speak
+santas[1].speak #-->expect "Ho, ho, ho! Haaaappy holidays! I'm a 0 year-old female Latino santa"
+santas[1].age
+santas[1].ethnicity
+santas[1].celebrate_birthday
+santas[1].gender = "shemale"
+santas[1].speak #-->expect "Ho, ho, ho! Haaaappy holidays! I'm a 1 year-old shemale Latino santa"
+santas[1].get_mad_at("Rudolph")
+santas[1].reindeer_ranking
