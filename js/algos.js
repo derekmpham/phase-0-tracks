@@ -18,7 +18,16 @@
 	//else
 		//return false
 
-
+//RANDOM TEST DATA FUNCTION
+//create function that takes in an integer
+//create empty array variable (will push/"upload" strings into it later)
+//create loop (i.e. with var index starting at 0, until index equates to length of array, index ++) to generate a random string for each index
+	//create empty string variable (will insert random string into it once we generate random string)
+	//create another index-based loop (i.e. with var i starting at 0, until i <= 9 (have to somehow randomly generate limit of i: 0 <= i <= 9), i++)
+		//create variable that generates random "a" - "z" characters (find appropriate method(s))
+		//insert line 27 variable into empty string variable (line 25 variable) using +=
+	//push (.push) resulting string into array variable
+//return array
 
 
 //LONGEST PHRASE FUNCTION
@@ -44,6 +53,8 @@ function keyvalue_match(object1, object2) {
 		}
 	}
 }
+
+//QUESTION TO ASK: WHY IS IT RETURNING BOTH FALSE? FIRST ONE IS SUPPOSED TO BE TRUE AND SECOND SUPPOSED TO BE FALSE
 
 
 
