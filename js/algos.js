@@ -31,6 +31,10 @@
 //return array
 
 
+
+
+//ACTUAL CODE
+
 //LONGEST PHRASE FUNCTION
 function longestPhrase(array) {
 	var phrase_lengths = []; //-->new empty array variable
@@ -72,8 +76,6 @@ function randomData (length) {
 
 
 
-
-
 //DRIVER CODE
 
 //LONGEST PHRASE FUNCTION
@@ -86,8 +88,13 @@ console.log(keyValueMatch({name: "Michael Jordan", height: "6 feet 6 inches"}, {
 console.log(keyValueMatch({name: "Michael Jordan", championships: 6}, {name: "Kobe Bryant", championships: 5})); //-->expect false
 
 //RANDOM TEST DATA FUNCTION
-console.log(randomData(3)) //-->expect 3 random strings of random lengths
-console.log(randomData(5)) //-->expect 5 random strings of random lengths
+console.log(randomData(3)); //-->expect 3 random strings of random lengths
+console.log(randomData(5)); //-->expect 5 random strings of random lengths
 
 //CONSOLIDATE BOTH RANDOM TEST DATA AND LONGEST PHRASE FUNCTIONS
-
+for (t = 1; t < 11; t++) {
+	var randomArray = randomData(Math.floor(Math.random() * 10) + 1); //-->choosing integer (number of elements in array) from 1 to 10 (choose 10 as max for convenience)
+	console.log(randomArray); //-->print array
+	var longestString = longestPhrase(randomArray); //-->identify longest string in array
+	console.log(longestString); //-->print longest string in array
+	}
