@@ -7,6 +7,8 @@
 
 	UPDATE last_five_presidents SET graduate_degree="true" WHERE name="George HW Bush";
 
+	-->table now shows that George HW Bush has a graduate degree
+
 
 3. Display information from both tables using one query
 
@@ -21,3 +23,5 @@
 5. Delete an item that meets some condition: take out any president that doesn't have a graduate degree
 
 	DELETE FROM last_five_presidents WHERE graduate_degree="false";
+
+	-->table now shows last four presidents (since we took out Ronald Reagan)
