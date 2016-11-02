@@ -25,3 +25,22 @@
 	DELETE FROM last_five_presidents WHERE graduate_degree="false";
 
 	-->table now shows last four presidents (since we took out Ronald Reagan)
+
+
+6. Different joins
+
+	UPDATE last_five_presidents SET party_id=4 WHERE name="Barack Obama";  -->set Barack Obama to unmatched party
+
+
+	INNER JOIN: returns rows where there is a match in both tables
+
+	SELECT last_five_presidents.id, last_five_presidents.name, last_five_presidents.start_year, last_five_presidents.end_year, last_five_presidents.graduate_degree, parties.name FROM last_five_presidents INNER JOIN parties ON last_five_presidents.party_id = parties.id;
+
+	-->table does not show Obama because there is no match in parties table
+________
+
+	LEFT JOIN: returns all rows from the left table, even if there are no matches in the right table
+
+	SELECT last_five_presidents.id, last_five_presidents.name, last_five_presidents.start_year, last_five_presidents.end_year, last_five_presidents.graduate_degree, parties.name FROM last_five_presidents LEFT JOIN parties ON last_five_presidents.party_id = parties.id;
+
+	-->table still shows Obama (but doesn't show his party name)
