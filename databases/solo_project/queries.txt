@@ -1,0 +1,23 @@
+1. Display information in one table (consolidated and "trimmed up" information from both tables)
+
+	SELECT last_five_presidents.id, last_five_presidents.name, last_five_presidents.start_year, last_five_presidents.end_year, last_five_presidents.graduate_degree, parties.name FROM last_five_presidents JOIN parties ON last_five_presidents.party_id = parties.id;
+
+
+2. Update item that meets condition: if George HW Bush decides to go back to school and get a graduate degree
+
+	UPDATE last_five_presidents SET graduate_degree="true" WHERE name="George HW Bush";
+
+
+3. Display information from both tables using one query
+
+	SELECT * FROM last_five_presidents, parties WHERE last_five_presidents.party_id = parties.id;
+
+
+4. Display a narrower selection of columns from both tables using one query (took out president id, graduate degree)
+
+	SELECT last_five_presidents.name, last_five_presidents.start_year, last_five_presidents.end_year, parties.name FROM last_five_presidents JOIN parties ON last_five_presidents.party_id = parties.id;
+
+
+5. Delete an item that meets some condition: take out any president that doesn't have a graduate degree
+
+	DELETE FROM last_five_presidents WHERE graduate_degree="false";
