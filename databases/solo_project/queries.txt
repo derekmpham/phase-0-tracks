@@ -1,0 +1,46 @@
+1. Display information in one table (consolidated and "trimmed up" information from both tables)
+
+	SELECT last_five_presidents.id, last_five_presidents.name, last_five_presidents.start_year, last_five_presidents.end_year, last_five_presidents.graduate_degree, parties.name FROM last_five_presidents JOIN parties ON last_five_presidents.party_id = parties.id;
+
+
+2. Update item that meets condition: if George HW Bush decides to go back to school and get a graduate degree
+
+	UPDATE last_five_presidents SET graduate_degree="true" WHERE name="George HW Bush";
+
+	-->table now shows that George HW Bush has a graduate degree
+
+
+3. Display information from both tables using one query
+
+	SELECT * FROM last_five_presidents, parties WHERE last_five_presidents.party_id = parties.id;
+
+
+4. Display a narrower selection of columns from both tables using one query (took out president id, graduate degree)
+
+	SELECT last_five_presidents.name, last_five_presidents.start_year, last_five_presidents.end_year, parties.name FROM last_five_presidents JOIN parties ON last_five_presidents.party_id = parties.id;
+
+
+5. Delete an item that meets some condition: take out any president that doesn't have a graduate degree
+
+	DELETE FROM last_five_presidents WHERE graduate_degree="false";
+
+	-->table now shows last four presidents (since we took out Ronald Reagan)
+
+
+6. Different joins
+
+	UPDATE last_five_presidents SET party_id=4 WHERE name="Barack Obama";  -->set Barack Obama to unmatched party
+
+
+	INNER JOIN: returns rows where there is a match in both tables
+
+	SELECT last_five_presidents.id, last_five_presidents.name, last_five_presidents.start_year, last_five_presidents.end_year, last_five_presidents.graduate_degree, parties.name FROM last_five_presidents INNER JOIN parties ON last_five_presidents.party_id = parties.id;
+
+	-->table does not show Obama because there is no match in parties table
+________
+
+	LEFT JOIN: returns all rows from the left table, even if there are no matches in the right table
+
+	SELECT last_five_presidents.id, last_five_presidents.name, last_five_presidents.start_year, last_five_presidents.end_year, last_five_presidents.graduate_degree, parties.name FROM last_five_presidents LEFT JOIN parties ON last_five_presidents.party_id = parties.id;
+
+	-->table still shows Obama (but doesn't show his party name)
