@@ -1,0 +1,5 @@
+Key design philosophies of the Linux operating system: (1) Small is beautiful; (2) Each program does one thing well; (3) Prototype as soon as possible; (4) Choose portability over efficiency; (5) Store data in flat text files; (6) Use software leverage; (7) Use shell scripts to increase leverage and portability; (8) Avoid captive user interfaces; (9) Make every program a filter
+
+A virtual private server (VPS) is a virtual computer you can set up (through a website) to do such things as host a site. Advantages of using a VPS include low costs, customization, scalability, and more control over your server.
+
+It is considered a bad idea to run programs as the root user on a Linux system, because it is not safe to do so--if you're using one of your programs as the root user and a bug causes the program to crash, you may lose unrecoverable information (i.e. entire directories, etc.).
