@@ -1,0 +1,24 @@
+body {
+	background-color: whitesmoke;
+}
+
+h1 {
+	background-color: snow;
+	color: black;
+	text-align: center;
+}
+p {
+	font-family: arial;
+	text-align: center;
+	color: blue;
+	border: 1px solid red;
+}
+h2 {
+	text-align: left;
+	color: green;
+	font-size: 150%;
+}
+li {
+	text-align: left;
+	list-style: none;
+}
