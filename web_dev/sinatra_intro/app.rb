@@ -51,3 +51,20 @@ end
 get '/contact' do
 	"26 Laker Drive, Los Angeles, CA 90024"
 end
+
+
+# GET route that takes person's name
+# as query parameter
+
+get '/great_job' do
+	name = params[:name]
+	if name
+		"Good job, #{name}!"
+	else
+		"Good job!"
+	end
+end
+
+
+
+
