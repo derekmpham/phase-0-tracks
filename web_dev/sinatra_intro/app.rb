@@ -72,7 +72,12 @@ get '/add/:number1/plus/:number2' do
 end
 
 
-
+# GET route that retrieves
+# students by campus
+get '/campus/:campus' do
+  student = db.execute("SELECT name FROM students WHERE campus=?", [params[:campus]])
+  student.to_s
+end
 
 
 
