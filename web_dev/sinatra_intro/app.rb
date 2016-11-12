@@ -80,7 +80,8 @@ get '/campus/:campus' do
 end
 
 
+# RESEARCH
 
-
-
-
+# Other web app frameworks/libraries include Ruby on Rails, Rack 'n' Alternatives, Volt, and Nitro.
+# Other gem options for using a database with Sinatra include PostgreSQL (pg) and MySQL.
+# The term web stack refers to the collection of software required for web development (i.e. to build a web site).
