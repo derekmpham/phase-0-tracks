@@ -47,7 +47,6 @@ end
 
 # GET route that retrieves
 # an address
-
 get '/contact' do
 	"26 Laker Drive, Los Angeles, CA 90024"
 end
@@ -55,7 +54,6 @@ end
 
 # GET route that takes person's name
 # as query parameter
-
 get '/great_job' do
 	name = params[:name]
 	if name
@@ -64,6 +62,19 @@ get '/great_job' do
 		"Good job!"
 	end
 end
+
+
+# GET route that uses route parameters
+# to add two numbers
+get '/add/:number1/plus/:number2' do
+	sum = params[:number1].to_i + params[:number2].to_i
+	"The sum is #{sum}!"
+end
+
+
+
+
+
 
 
 
